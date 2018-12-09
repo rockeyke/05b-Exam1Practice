@@ -209,7 +209,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this TEST function.
+    # DONE: 5. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.  Use the usual form:
     #
@@ -226,6 +226,26 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+
+    expected = 3
+    answer = problem1b(2, 3)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 1
+    answer = problem1b(3, 1)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 2
+    answer = problem1b(4, 2)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 3
+    answer = problem1b(3, 3)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
 
 
 def problem1b(m, f):
@@ -245,7 +265,7 @@ def problem1b(m, f):
            since there are 44 primes between 5 and 200.
      """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ###########################################################################
@@ -258,6 +278,12 @@ def problem1b(m, f):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
+
+    counter = 0
+    for k in range(f*m - m + 1):
+        if is_prime(m+k) is True:
+            counter = counter + 1
+    return counter
 
 
 def run_test_problem1c():
@@ -356,6 +382,12 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # -------------------------------------------------------------------------
+
+    total = 1
+    for k in range(n-1):
+        if is_prime(k+2) is True:
+            total = total*(k+2)
+    return sum_of_digits(total)
 
 
 ###############################################################################
